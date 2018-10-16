@@ -1,2 +1,5 @@
 # svg-learn
-Reading about SVG and improve skills to be able to good graphs plotter.
+
+cat.svg : basic path using with transform and translate.
+
+viewBox : viewport and viewBox without preserveAspectRatio scaling and scroping.
