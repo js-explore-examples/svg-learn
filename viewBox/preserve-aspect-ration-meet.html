@@ -1,30 +1,125 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="./../main.css" type="text/css" />
+  </head>
 
-<head>
-  <link rel="stylesheet" href="./../main.css" type="text/css" />
-</head>
+  <body>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .bord {
+        border: 5px solid black;
+      }
+      svg {
+        border: 5px dashed green;
+      }
+    </style>
+    <!-- Dynamically changing value of SVG -->
+    <!--
+      <script type="application/javascript">
+        document.addEventListener("DOMContentLoaded", () => {
+          const parElement = document.getElementById("par-change");
+          const svgPARList = document.getElementsByClassName("par");
 
-<body>
-
-  <svg width="400" height="400">
-    <svg width="100" height="100" viewBox="0 0 100 100">
+          parElement.onchange = event => {
+            const testSvg = document.getElementById("refSVG");
+            let setValue =
+              testSvg.preserveAspectRatio.baseVal.SVG_MEETORSLICE_MEET;
+            if (event.target.value === "slice") {
+              setValue =
+                testSvg.preserveAspectRatio.baseVal.SVG_MEETORSLICE_SLICE;
+            } else {
+              setValue = testSvg.preserveAspectRatio.baseVal.SVG_MEETORSLICE_MEET;
+            }
+            Array.from(svgPARList).forEach(svg => {
+              svg.setAttribute("preserveAspectRatio", setValue);
+            });
+          };
+        });
+      </script>
+    -->
+    <!--
+      <select id="par-change">
+        <option value="meet">Meet</option>
+        <option default value="slice">Slice</option>
+      </select>
+    -->
+    <svg width="400" height="400" class="bord hidden" id="refSVG">
       <g id="rect-circle-group">
         <rect width="100" height="100" x="0" y="0" fill="none" stroke="red" />
         <circle cx="50" cy="50" r="49" />
       </g>
-    </svg>
-    <svg width="100" height="400" preserveAspectRatio="xMinYMax meet" viewBox="0 0 200 200">
-      <use fill="cyan" href="#rect-circle-group" />
-    </svg>
-    <svg width="100" height="400" preserveAspectRatio="xMinYMax slice" viewBox="0 0 200 200">
-      <use fill="green" href="#rect-circle-group" />
-    </svg>
-    <svg width="100" height="400" preserveAspectRatio="xMinYMax slice" viewBox="0 0 400 400">
-      <use fill="red" href="#rect-circle-group" transform="translate(0,100)" />
-    </svg>
-  </svg>
 
-</body>
+      <!--
+        <svg viewBox="0 0 200 200" preserveAspectRatio="xMinYMin meet">
+          <use fill="green" href="#rect-circle-group" />
+        </svg>
+        <svg viewBox="0 0 400 100" preserveAspectRatio="xMinYMin meet">
+          <use fill="green" href="#rect-circle-group" />
+        </svg>
+      -->
+    </svg>
+    <br />
+    <svg
+      width="400"
+      height="100"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMinYMid meet"
+      class="par"
+    >
+      <use fill="black" href="#rect-circle-group" />
+    </svg>
+    <br />
+    <svg
+      width="400"
+      height="100"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid meet"
+      class="par"
+    >
+      <use fill="black" href="#rect-circle-group" />
+    </svg>
+    <br />
+    <svg
+      width="400"
+      height="100"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMaxYMax meet"
+      class="par"
+    >
+      <use fill="black" href="#rect-circle-group" />
+    </svg>
+    <br />
+    <svg
+      width="100"
+      height="400"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMinYMin meet"
+      class="par"
+    >
+      <use fill="black" href="#rect-circle-group" />
+    </svg>
 
+    <svg
+      width="100"
+      height="400"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid meet"
+      class="par"
+    >
+      <use fill="black" href="#rect-circle-group" />
+    </svg>
+
+    <svg
+      width="100"
+      height="400"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMaxYMax meet"
+      class="par"
+    >
+      <use fill="black" href="#rect-circle-group" />
+    </svg>
+  </body>
 </html>

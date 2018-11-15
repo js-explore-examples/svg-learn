@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>SVG</title>
+  </head>
 
-<head>
-</head>
-
-<body>
-  <div>
-    <div>A circle inside a square.<br />
-      inside nodes which uses default
-    </div>
-    <svg width="100" height="100" viewBox="0 0 100 100">
-      <g id="rect-circle-group">
-        <rect width="100" height="100" x="0" y="0" fill="none" stroke-width="2" />
-        <circle cx="50" cy="50" r="49" stroke="blue" />
-      </g>
-    </svg>
-  </div>
-  <div>
-    <div>Two svg's with different viewport and viewBox. Green border square has same viewport and viewBox width and
-      height.<br />
-      <ul>
-        <li>Svg with red square border having viewport width and height half of the viewBox width and height.</li>
-        <li>Svg with pink square border having viewport width and height double of the viewBox width and height.</li>
-      </ul>
-    </div>
-    <svg width="200" height="200">
-      <svg width="100" height="100" viewBox="0 0 200 200">
-        <use href="#rect-circle-group" fill="none" stroke="red" stroke-width="2" />
-      </svg>
-      <svg width="100" height="100" viewBox="0 0 100 100">
-        <use href="#rect-circle-group" fill="none" stroke="green" />
-      </svg>
-      <svg width="200" height="200" viewBox="0 0 100 100">
-        <use href="#rect-circle-group" fill="none" stroke="pink" />
-      </svg>
-    </svg>
-  </div>
-  <div>
+  <body>
     <div>
-      How changing the viewBox Starting x positon and y position effect the Visible part.Since Viewport starts form
-      origin position in left top corner.
-      This changes effect the trim of svg graph.
+      <h1>Basic SVG Viewport and ViewBox Play.</h1>
+      <div>
+        A circle inside a square.<br />
+        inside nodes which uses default
+      </div>
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <g id="rect-circle-group">
+          <rect
+            width="100"
+            height="100"
+            x="0"
+            y="0"
+            fill="none"
+            stroke-width="2"
+          />
+          <circle cx="50" cy="50" r="49" stroke="blue" />
+        </g>
+      </svg>
     </div>
-    <svg width="100" height="100" viewBox="50 0 100 100">
-      <use fill="red" href="#rect-circle-group" />
-    </svg>
-    <svg width="100" height="100" viewBox="0 50 100 100">
-      <use fill="blue" href="#rect-circle-group" />
-    </svg>
-    <svg width="100" height="100" viewBox="50 50 100 100">
-      <use fill="green" href="#rect-circle-group" />
-    </svg>
-  </div>
-</body>
-
+    <div>
+      <div>
+        Two svg's with different viewport and viewBox. Green border square has
+        same viewport and viewBox width and height.<br />
+        <ul>
+          <li>
+            Svg with red square border having viewport width and height half of
+            the viewBox width and height.
+          </li>
+          <li>
+            Svg with pink square border having viewport width and height double
+            of the viewBox width and height.
+          </li>
+        </ul>
+      </div>
+      <svg width="200" height="200">
+        <svg width="100" height="100" viewBox="0 0 200 200">
+          <use
+            href="#rect-circle-group"
+            fill="none"
+            stroke="red"
+            stroke-width="2"
+          />
+        </svg>
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <use href="#rect-circle-group" fill="none" stroke="green" />
+        </svg>
+        <svg width="200" height="200" viewBox="0 0 100 100">
+          <use href="#rect-circle-group" fill="none" stroke="pink" />
+        </svg>
+      </svg>
+    </div>
+    <div>
+      <div>
+        How changing the viewBox Starting x positon and y position effect the
+        Visible part.Since Viewport starts form origin position in left top
+        corner. This changes effect the trim of svg graph.
+      </div>
+      <svg width="100" height="100" viewBox="50 0 100 100">
+        <use fill="red" href="#rect-circle-group" />
+      </svg>
+      <svg width="100" height="100" viewBox="0 50 100 100">
+        <use fill="blue" href="#rect-circle-group" />
+      </svg>
+      <svg width="100" height="100" viewBox="50 50 100 100">
+        <use fill="green" href="#rect-circle-group" />
+      </svg>
+    </div>
+  </body>
 </html>

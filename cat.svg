@@ -3,8 +3,8 @@
        "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
   <svg width="480" height="240">
     <svg id ="catsvg" width="480" height="240">
-      <title> CAT </title>
-      <desc>Stick Figure of a Cat.</desc>
+      <title>CAT </title>
+      <desc>Stck Figure of a Cat.</desc>
       <!-- cat face circle : with inline style elements-->
       <circle cx="70" cy="70" r="50" style="stroke:cyan;"/>
       <!-- cat eyes style attributes can be individual elments-->
@@ -30,6 +30,6 @@
       <text font-size="14pt" font-family="sans-serif" x="60" y="145">Cat</text>
     </svg>
     <svg width="480" height="240">
-      <use href="#catsvg" transform="translate(120,0)" fill="orange"/>
+      <use href="#catsvg" transform="translate(120,0)" fill="#338"/>
     </svg>
   </svg>
